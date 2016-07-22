@@ -57,21 +57,24 @@
 
 * JAX-RS dependency to pom.xml  
 
+```xml
 	<dependency>
 		<groupId>io.swagger</groupId>
 		<artifactId>swagger-jersey2-jaxrs</artifactId>
 		<version>1.5.9</version>
 	</dependency>
+```
 
 * Configure swagger
 
+```java
 	@Component
 	public class AppResourceConfig extends ResourceConfig {
     	public AppResourceConfig() {
         	...
         	configureSwagger();
     	}
-
+	
     	private void configureSwagger() {
         	register(ApiListingResource.class);
         	BeanConfig beanConfig = new BeanConfig();
@@ -86,9 +89,11 @@
         	beanConfig.setScan(true);
     	}
 	}
+```
 
 * Add Swagger API annotation
 
+```java
 	...
 	@Api
 	public class UserControllerRest {
@@ -102,6 +107,7 @@
     		...
     	}
 	}
+```
 	
 * launch Spring Boot and call Swagger json endpoint
 
