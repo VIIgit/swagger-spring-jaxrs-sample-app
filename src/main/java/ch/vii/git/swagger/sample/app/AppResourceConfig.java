@@ -1,5 +1,7 @@
 package ch.vii.git.swagger.sample.app;
 
+import javax.ws.rs.ApplicationPath;
+
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +10,7 @@ import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
 
 @Component
+@ApplicationPath("/app")
 public class AppResourceConfig extends ResourceConfig {
 	public AppResourceConfig() {
 		register(UserControllerRest.class);

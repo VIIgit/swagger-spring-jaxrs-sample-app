@@ -60,12 +60,12 @@
 * launch Spring Boot and call Rest Service endpoint
 
 ```
-	http://localhost:8080/app/users
+	http://localhost:8080/app/rest/users
 ```
 or as wadl
 
 ```
-	http://localhost:8080/application.wadl
+	http://localhost:8080/app/rest/application.wadl
 ```
 
 
@@ -128,17 +128,48 @@ or as wadl
 * launch Spring Boot and call Swagger json/yaml endpoint
 
 ```
-	http://localhost:8080/swagger.json
+	http://localhost:8080/app/swagger.json
 ```
 or 
 ```
-	http://localhost:8080/swagger.yaml
+	http://localhost:8080/app/swagger.yaml
 ```
 
 # Cors
 
 Register [CORSResponseFilter][] in [AppResourceConfig][] to support Cross-Origin Resource Sharing (CORS) 
 
+
+# Swagger-ui
+
+* Configure swagger
+
+With JAX-RS (Jersey) the servlet path is by default set to /*. To be able to add static html like swagger-ui add an ApplicationPath annotation to be able to configure other resources.
+
+```java
+	@Component
+	@ApplicationPath("/app")
+	public class AppResourceConfig extends ResourceConfig {
+		...
+	}
+```
+
+
+```java
+	@Configuration
+	@EnableWebMvc
+	public class WebConfig extends WebMvcConfigurerAdapter {
+		@Override
+		public void addResourceHandlers(ResourceHandlerRegistry registry) {
+			registry.addResourceHandler("/swagger-ui/**").addResourceLocations("classpath:/swagger-ui/dist/");
+		}
+	}
+```
+* launch swagger-ui
+
+```
+	http://localhost:8080/swagger-ui/index.html
+```
 
 # Rich API Sample
 

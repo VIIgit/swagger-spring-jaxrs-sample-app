@@ -19,7 +19,7 @@ import ch.vii.git.swagger.sample.rest.model.Person;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Path("/app")
+@Path("/rest")
 @Api
 public class UserControllerRest {
 
