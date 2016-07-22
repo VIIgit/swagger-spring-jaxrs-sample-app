@@ -5,6 +5,7 @@
 
 * Add spring-boot-starter-jersey in pom.xml
 
+```xml
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -16,9 +17,11 @@
 			<artifactId>spring-boot-starter-jersey</artifactId>
 		</dependency>
 	</dependencies>
+```
 
 * Create a Controller and enrich with JAX-RS(Jersey) Annotations
 
+```java
 	@Path("/app")
 	public class UserControllerRest {
 	
@@ -29,15 +32,19 @@
         	return  Collections.emptyList(); 
     	}
 	}
+```
 
 * Add an Entity
 
+```java
 	public class Person {
 		String getName(){return null};
 	}
+```
 
 * Register Controller in Spring Boot
 
+```java
 	@Component
 	public class AppResourceConfig extends ResourceConfig {
     	public AppResourceConfig() {
@@ -48,10 +55,13 @@
     		register(UserControllerRest.class);
 	    }
     }
+```
 
 * launch Spring Boot and call Rest Service endpoint
 
+```
 	http://localhost:8080/app/users
+```
 
 ### Add Swagger 
 
@@ -113,7 +123,4 @@
 
 	http://localhost:8080/swagger.json
 	
-```java
-class xxx;
-```
     
