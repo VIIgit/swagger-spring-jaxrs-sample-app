@@ -135,6 +135,15 @@ or
 	http://localhost:8080/swagger.yaml
 ```
 
-# Rich API Sample [Swagger Api][]
+# Cors
+
+Register [CORSResponseFilter][] in [AppResourceConfig][] to support Cross-Origin Resource Sharing (CORS) 
+
+
+# Rich API Sample
+
+[Swagger Api][] 
 
 [Swagger Api]: https://github.com/swagger-api/swagger-core/wiki/Annotations
+[CORSResponseFilter]: https://github.com/VIIgit/swagger-spring-jaxrs-sample-app/blob/master/src/main/java/ch/vii/git/swagger/sample/app/CORSResponseFilter.java
+[AppResourceConfig]: https://github.com/VIIgit/swagger-spring-jaxrs-sample-app/blob/master/src/main/java/ch/vii/git/swagger/sample/app/AppResourceConfig.java
