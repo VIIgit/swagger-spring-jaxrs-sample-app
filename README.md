@@ -170,11 +170,15 @@ With JAX-RS (Jersey) the servlet path is by default set to /*. To be able to add
 ```
 	http://localhost:8080/swagger-ui/index.html
 ```
+# Swagger build plugin
+
+JAX-RS & SpringMVC supported maven build plugin, helps you generate Swagger JSON and API document in build phase. [swagger-maven-plugin]
 
 # Rich API Sample
 
-[Swagger Api][] 
+Rich documentation example were all [Swagger Api][]  attributes are used and the Rest Service has been separated to a annotated Java Interface and the implementation. In my opinion the way a Rest Service should be designed.    
 
-[Swagger Api]: https://github.com/swagger-api/swagger-core/wiki/Annotations
+[swagger-maven-plugin]: https://github.com/kongchen/swagger-maven-plugin
+[Swagger Api]: https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X
 [CORSResponseFilter]: https://github.com/VIIgit/swagger-spring-jaxrs-sample-app/blob/master/src/main/java/ch/vii/git/swagger/sample/app/CORSResponseFilter.java
 [AppResourceConfig]: https://github.com/VIIgit/swagger-spring-jaxrs-sample-app/blob/master/src/main/java/ch/vii/git/swagger/sample/app/AppResourceConfig.java

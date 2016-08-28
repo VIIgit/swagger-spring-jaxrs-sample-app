@@ -19,8 +19,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.build.timestamp>${maven.build.timestamp}</maven.build.timestamp>
 	</properties>
-
 
 	<build>
 		<plugins>
@@ -29,6 +29,31 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
+		<!-- update version: mvn process-resources -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.yaml</include>
+					<include>**/swagger-ui/dist/index.html</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>		
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.properties</exclude>
+					<exclude>**/*.yaml</exclude>
+					<exclude>**/swagger-ui/dist/index.html</exclude>
+				</excludes>
+			</resource>
+		</resources>
 	</build>
 
 	<dependencies>
