@@ -139,6 +139,54 @@ or
 
 Register [CORSResponseFilter][] in [AppResourceConfig][] to support Cross-Origin Resource Sharing (CORS) 
 
+# Generate static swagger.json with maven
+
+```xml
+	<!-- Generates static swagger.json -->
+	<plugin>
+		<groupId>com.github.kongchen</groupId>
+		<artifactId>swagger-maven-plugin</artifactId>
+		<version>3.1.3</version>
+		<configuration>
+			<apiSources>
+				<apiSource>
+					<springmvc>false</springmvc>
+					<locations>ch.vii.git.swagger.sample.rest</locations>
+					<schemes>http,https</schemes>
+					<host>localhost:[port]</host>
+					<basePath>/app</basePath>
+					<info>
+						<title>Swagger REST API</title>
+						<version>${project.version}</version>
+						<description>This is a sample spec for our REST API. Generated at ${maven.build.timestamp}</description>
+						<termsOfService>
+							https://github.com/VIIgit/swagger-spring-jaxrs-sample-app
+						</termsOfService>
+						<contact>
+							<email>github(@)vii.ch</email>
+							<name>Erwin</name>
+							<url>https://github.com/VIIgit/</url>
+						</contact>
+						<license>
+							<url>https://raw.githubusercontent.com/VIIgit/swagger-spring-jaxrs-sample-app/master/LICENSE</url>
+							<name>Apache Licence 2.0</name>
+						</license>
+					</info>
+					<swaggerDirectory>src/main/resources/swagger-ui/dist</swaggerDirectory>
+				</apiSource>
+			</apiSources>
+		</configuration>
+		<executions>
+			<execution>
+				<phase>compile</phase>
+				<goals>
+					<goal>generate</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+```
+
 
 # Swagger-ui
 
