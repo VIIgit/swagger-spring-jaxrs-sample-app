@@ -186,7 +186,7 @@ Register [CORSResponseFilter][] in [AppResourceConfig][] to support Cross-Origin
 		</executions>
 	</plugin>
 ```
-
+Generates a static json file [SwaggerJson][] 
 
 # Swagger-ui
 
@@ -230,3 +230,4 @@ Rich documentation example were all [Swagger Api][]  attributes are used and the
 [Swagger Api]: https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X
 [CORSResponseFilter]: https://github.com/VIIgit/swagger-spring-jaxrs-sample-app/blob/master/src/main/java/ch/vii/git/swagger/sample/app/CORSResponseFilter.java
 [AppResourceConfig]: https://github.com/VIIgit/swagger-spring-jaxrs-sample-app/blob/master/src/main/java/ch/vii/git/swagger/sample/app/AppResourceConfig.java
+[SwaggerJson]: https://raw.githubusercontent.com/VIIgit/swagger-spring-jaxrs-sample-app/master/src/main/resources/swagger-ui/dist/swagger.json
